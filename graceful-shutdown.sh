@@ -1,5 +1,8 @@
 /usr/local/bin/graceful-shutdown.sh
 
+chmod +x /usr/local/bin/graceful-shutdown.sh
+
+
 #!/bin/bash
 
 # Graceful shutdown of all running VMs
