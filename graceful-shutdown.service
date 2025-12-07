@@ -1,0 +1,14 @@
+nano /etc/systemd/system/graceful-shutdown.service
+
+[Unit]
+Description=Graceful shutdown of Proxmox VMs and LXCs
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/graceful-shutdown.sh
+TimeoutSec=0
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
